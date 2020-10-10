@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<title>Information Technology</title>
+<style>
+h1 { 
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  text-align: center;
+}
+h3 { 
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  text-align: center;
+}
+*{
+    box-sizing:border-box;
+}
+body{
+    background: url('/static/IT/background.jpg');
+  height: 100%;
+  background-size: cover;
+}
+
+.container{
+    max-width: 1200px;
+    margin:auto
+   
+}
+.gallery{
+    margin: 5px;
+    border: 10px solid black;
+    float:left;
+    width: 390px;
+}
+.gallery img{
+    width:370px;
+    height:300px;
+}
+.desc{
+    padding:1px;
+    text-align:center;
+    background: white;
+
+}
+</style>
+</head>
+
+<body>
+    <div class="w3-animate-opacity">
+<h1 style="font-family: Arial, Helvetica, sans-serif; color: antiquewhite;">INFORMATION TECHNOLOGY</h1>
+    </div>
+<div class="w3-animate-zoom">
+    <div class="gallery">
+        <img src ="{% static 'it/man.jpg' %}">
+            <div class="desc">
+                <p>Prof Andrew Wilson
+                <br>Expertise in Android task monitoring
+                <br>Contact info= 9826255212
+                <br>Email= awilson224@gmail.com</p>
+            </div>
+    </div>
+    <div class="gallery">
+        <img src ="{% static 'it/mann 2.jpg' %}">
+            <div class="desc">
+                <p>Prof Gurmeet Singh
+                <br>Expertise in Data Structures
+                <br>Contact info= 8226789707  
+                <br>Email= gs14@gmail.com</p>
+            </div>
+    </div>
+    <div class="gallery">
+        <img src ="{% static 'it/woman 3.jpg' %}">
+            <div class="desc">
+                <p>Prof Pragya Tripathi
+                <br>Expertise in Digital Logic and Design
+                <br>Contact info=8525339222
+                <br>Email= pra12@gmail.com</p>
+            </div>
+    </div>
+    <div style="margin-left: 200px;">
+    <div class="gallery">
+        <img src ="{% static 'it/woman 2.jpg' %}">
+            <div class="desc">
+                <p>Prof Sunita Verma
+                <br>Expertise in Operating Systems
+                <br>Contact info=8263549447
+                <br>Email= sunita999@gmail.com</p>
+             </div>
+    </div>
+    <div class="gallery">
+        <img src ="{% static 'it/mann 3.jpg' %}">
+            <div class="desc">
+                <p>Prof Kapil Verma
+                <br>Expertise in  Cyber Security
+                <br>Contact info=9988665599
+                <br>Email= kv7@gmail.com</p>    
+            </div>
+    </div>
+</div>
+
+</div>
+
+</body>

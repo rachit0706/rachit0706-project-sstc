@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% load static %} 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Home</title>
+    <style>
+      h1 { 
+        font-weight: 800;
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+        text-align: center;
+    }
+    h2 { 
+      font-weight: 800;
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+        
+    }
+    h3 { 
+
+        font-weight: 800;
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+        
+    }
+    h4 { 
+      font-weight: 800;
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+        
+    }
+    h5 { 
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+        
+    }
+    h6 { 
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+        text-align: center;
+        background: snow;
+        color: tomato;
+        
+    }
+    
+      body{
+    margin:0;
+    
+    }
+    
+    
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Project SSTC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/"><i class="fa fa-home"></i>Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item {% block aboutactive %}{% endblock aboutactive %}">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item {% block collegeactive %}{% endblock collegeactive %}">
+                    <a class="nav-link" href="/college">College</a>
+                </li>
+                <li class="nav-item {% block contactactive %}{% endblock contactactive %}">
+                    
+                </li>
+
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modalConfirmDelete">Contact Us</button>
+            </form>
+        </div>
+    </nav>
+    {% for message in messages  %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message </strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>  
+    {% endfor %}
+
+    
+    <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content text-center">
+      <!--Header-->
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading">ENTER YOUR QUERY</p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <form action="{% url 'contact' %}" method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name='name' aria-describedby="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name='email' aria-describedby="emailHelp" required>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="student_id">Student ID</label>
+            <input type="text" class="form-control" id="student_id" name='student_id' aria-describedby="student_id" required>
+            <small id="phoneHelp" class="form-text text-muted">Please enter correct student ID as provided by the institute.</small>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="phone" class="form-control" id="phone" name='phone' aria-describedby="phone" required>
+            <small id="phoneHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="content">Describe your issue:</label>
+            <textarea name="content" id="content" class="form-control" cols="30" rows="7" required></textarea>
+          </div>
+      
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <i class="fas fa-times fa-4x animated rotateIn"></i>
+
+      </div>
+
+      <!--Footer-->
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!--Modal: modalConfirmDelete-->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+
+
+<!-- 
+        <div class="col-auto d-none d-lg-block">
+          <div class="container">
+            <img src="{% static 'home\static\home\logo1.png' %"} width="280px" height="190"alt="">
+            <h6> Our Prime Motto: “Dedicated in Up-Skilling & Empowering Nation” </h6>
+          </div> -->
+          <div class="w3-animate-zoom">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active" mt-4 style="height: 398px;">
+              <img src="{% static 'home/library1.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" style="height: 398px;">
+              <img src="{% static 'home/scenic 1.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item"style="height: 398px;" >
+              <img src="{% static 'home/scenic 2.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+           <div class="container my-5">
+            <div class="row mb-2">
+              <div class="col-md-6">
+                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                  <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary"><b>JOIN US</b></strong>
+                    
+                    
+                    <p class="card-text mb-auto"><strong>Take the next step toward your personal and professional goals with us</strong> </p>
+                    
+                  </div>
+                  <div class="col-auto d-none d-lg-block">
+                  <img src="{% static 'home/join us.jpg' %}" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                  <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-success"><b>Having trouble deciding the projects?</b></strong>
+                    
+                    
+                    <p class="mb-auto"><strong>Build projects under the guidance of our highly experienced experts who will help you clear your path</strong> </p>
+                    
+                  </div>
+                  <div class="col-auto d-none d-lg-block">
+                    <img src="{% static 'home/teach.jpg' %}" width="280px" height="190"alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="featurette-divider">
+                         <h1> Recent Projects </h1>      
+
+        </div>
+        <div class="container my-5">
+         <div class="row mb-2">
+           <div class="col-md-6">
+             <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+               <div class="col p-4 d-flex flex-column position-static">
+                 <strong class="d-inline-block mb-2 text-primary"><b></b></strong>
+                <div class="text-center">
+                 <h2> Mechanical Projects </h2>
+                </div>
+                 
+                <p class="card-text mb-auto"><strong>Take the next step toward your personal and professional goals with us</strong> </p>
+               </div>
+               <div class="col-auto d-none d-lg-block">
+               <img src="{% static 'home\proj.jpeg' %}" width="280px" height="190"alt="">
+               </div>
+             </div>
+           </div>
+           <div class="col-md-6">
+             <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+               <div class="col p-4 d-flex flex-column position-static">
+                 <strong class="d-inline-block mb-2 text-success"><b>modification</b></strong>
+                 
+                 
+                 <p class="mb-auto"><strong>Build projects under the guidance of our highly experienced experts who will help you clear your path</strong> </p>
+                 
+               </div>
+               <div class="col-auto d-none d-lg-block">
+                 <img src="{% static 'home\proj2.jpeg' %}" width="280px" height="190"alt="">
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       <hr class="featurette-divider">
+
+
+        </div>
+        <div class="container my-5">
+         <div class="row mb-2">
+           <div class="col-md-6">
+             <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+               <div class="col p-4 d-flex flex-column position-static">
+                 <strong class="d-inline-block mb-2 text-primary"><b>  </b></strong>
+                 <div class="text-center">
+                  <h3> Computer Science Projects </h3>
+                 </div>
+                 
+                 
+                 <p class="card-text mb-auto"><strong>Take the next step toward your personal and professional goals with us</strong> </p>
+                 
+               </div>
+               <div class="col-auto d-none d-lg-block">
+               <img src="{% static 'home\cs.jpg' %}" width="280px" height="190"alt="">
+               </div>
+             </div>
+           </div>
+           <div class="col-md-6">
+             <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+               <div class="col p-4 d-flex flex-column position-static">
+                 <strong class="d-inline-block mb-2 text-success"><b> Ideas </b></strong>
+                 
+                 
+                 <p class="mb-auto"><strong>Build projects under the guidance of our highly experienced experts who will help you clear your path</strong> </p>
+                 
+               </div>
+               <div class="col-auto d-none d-lg-block">
+                 <img src="{% static 'home\cs1.jpg' %}" width="280px" height="190"alt="">
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       <hr class="featurette-divider">
+
+
+      </div>
+      <div class="container my-5">
+       <div class="row mb-2">
+         <div class="col-md-6">
+           <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+             <div class="col p-4 d-flex flex-column position-static">
+               <strong class="d-inline-block mb-2 text-primary"><b>  </b></strong>
+
+               <div class="text-center">
+                <h4> Civil Projects </h4>
+               </div>
+               
+               
+               <p class="card-text mb-auto"><strong>Take the next step toward your personal and professional goals with us</strong> </p>
+               
+             </div>
+             <div class="col-auto d-none d-lg-block">
+             <img src="{% static 'home\civil.jpg' %}" width="280px" height="190"alt="">
+             </div>
+           </div>
+         </div>
+         <div class="col-md-6">
+           <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+             <div class="col p-4 d-flex flex-column position-static">
+               <strong class="d-inline-block mb-2 text-success"><b>Construction Site</b></strong>
+               
+               
+               <p class="mb-auto"><strong>Build projects under the guidance of our highly experienced experts who will help you clear your path</strong> </p>
+               
+             </div>
+             <div class="col-auto d-none d-lg-block">
+               <img src="{% static 'home\civil2.jpg' %}" width="280px" height="190"alt="">
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <hr class="featurette-divider">
+
+
+    </div>
+    <div class="container my-5">
+     <div class="row mb-2">
+       <div class="col-md-6">
+         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+           <div class="col p-4 d-flex flex-column position-static">
+             <strong class="d-inline-block mb-2 text-primary"><b>  </b></strong>
+
+             <div class="text-center">
+              <h5> Information Technology Projects </h5>
+             </div>
+             
+             
+             <p class="card-text mb-auto"><strong>Take the next step toward your personal and professional goals with us</strong> </p>
+             
+           </div>
+           <div class="col-auto d-none d-lg-block">
+           <img src="{% static 'home\it.jpg' %}" width="280px" height="190"alt="">
+           </div>
+         </div>
+       </div>
+       <div class="col-md-6">
+         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+           <div class="col p-4 d-flex flex-column position-static">
+             <strong class="d-inline-block mb-2 text-success"><b> Ideas </b></strong>
+             
+             
+             <p class="mb-auto"><strong>Build projects under the guidance of our highly experienced experts who will help you clear your path</strong> </p>
+             
+           </div>
+           <div class="col-auto d-none d-lg-block">
+             <img src="{% static 'home\it2.jpg' %}" width="280px" height="190"alt="">
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   <hr class="featurette-divider"> 
+
+
+  </div>
+  <div class="container my-5">
+   <div class="row mb-2">
+     <div class="col-md-6">
+       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+         <div class="col p-4 d-flex flex-column position-static">
+           <strong class="d-inline-block mb-2 text-primary"><b>  </b></strong>
+
+           <div class="text-center">
+            <h5> EEE Projects </h5>
+           </div>
+           
+           
+           <p class="card-text mb-auto"><strong>Take the next step toward your personal and professional goals with us</strong> </p>
+           
+         </div>
+         <div class="col-auto d-none d-lg-block">
+         <img src="{% static 'home\EEE.jpg' %}" width="280px" height="190"alt="">
+         </div>
+       </div>
+     </div>
+     <div class="col-md-6">
+       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+         <div class="col p-4 d-flex flex-column position-static">
+           <strong class="d-inline-block mb-2 text-success"><b> Ideas </b></strong>
+           
+           
+           <p class="mb-auto"><strong>Build projects under the guidance of our highly experienced experts who will help you clear your path</strong> </p>
+           
+         </div>
+         <div class="col-auto d-none d-lg-block">
+           <img src="{% static 'home\EEE1.jpg' %}" width="280px" height="190"alt="">
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ <hr class="featurette-divider"> 
+        
+
+</div>
+<div class="container my-5">
+ <div class="row mb-2">
+   <div class="col-md-6">
+     <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+       <div class="col p-4 d-flex flex-column position-static">
+         <strong class="d-inline-block mb-2 text-primary"><b>  </b></strong>
+
+         <div class="text-center">
+          <h5> EE Projects </h5>
+         </div>
+         
+         
+         <p class="card-text mb-auto"><strong>Take the next step toward your personal and professional goals with us</strong> </p>
+         
+       </div>
+       <div class="col-auto d-none d-lg-block">
+       <img src="{% static 'home\EE.jpg' %}" width="280px" height="190"alt="">
+       </div>
+     </div>
+   </div>
+   <div class="col-md-6">
+     <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+       <div class="col p-4 d-flex flex-column position-static">
+         <strong class="d-inline-block mb-2 text-success"><b> Ideas </b></strong>
+         
+         
+         <p class="mb-auto"><strong>Build projects under the guidance of our highly experienced experts who will help you clear your path</strong> </p>
+         
+       </div>
+       <div class="col-auto d-none d-lg-block">
+         <img src="{% static 'home\EE1.jpg' %}" width="280px" height="190"alt="">
+       </div>
+     </div>
+   </div>
+ </div>
+ </div>
+</div>
+<hr class="featurette-divider"> 
+          
+          
+          
+          
+         
+</body>
+
+</html>

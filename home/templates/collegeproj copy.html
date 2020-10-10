@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <title>{{ user.username }}</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Welcome - {{ user.username }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
+      <button type="button" class="btn btn-outline-success ml-2 mr-2" data-toggle="modal" data-target="#staticBackdrop">
+        Add Project
+      </button>
+      <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Log Out</button>
+      </form>
+
+    </div>
+  </nav>
+  {% for message in messages  %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Message </strong> {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endfor %}
+  {% load crispy_forms_tags %}
+  <!-- <div class="content-section">
+    <div class="media">
+      <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+      <div class="media-body">
+        <h2 class="account-heading">{{ user.username }}</h2>
+        <p class="text-secondary">{{ user.email }}</p>
+      </div>
+    </div> -->
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Profile Info</legend>
+            {{ u_form|crispy }}
+            {{ p_form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Update</button>
+        </div>
+    </form>
+  </div>
+
+  <!-- <div class="container mt-4">
+    <div class="form-group">
+      <label for="userdetfname">First Name</label>
+      <input type="text" class="form-control" id="userdetfname" value="{{ user.first_name }}" readonly aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="userdetlname">First Name</label>
+      <input type="text" class="form-control" id="userdetlname" value="{{ user.last_name }}" readonly aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="userdetUname">First Name</label>
+      <input type="text" class="form-control" id="userdetUname" value="{{ user.username }}" readonly aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="userdetEmail">Password</label>
+      <input type="email" class="form-control" value="{{ user.email }}" readonly id="userdetEmail">
+    </div>
+    
+  </div> -->
+
+  <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Add Your Project</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="{% url 'addProject' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="projUsername">User Name</label>
+              <input type="text" class="form-control" id="projUsername" name="projUsername" value="{{ user.username }}"
+                readonly placeholder="Write your full name">
+            </div>
+            <div class="form-group">
+              <label for="studentname">Full Name</label>
+              <input type="text" class="form-control" id="studentname" name="studentname"
+                value="{{ user.first_name }} {{ user.last_name }}" readonly placeholder="Write your full name">
+            </div>
+            <div class="form-group">
+              <label for="edrpID">College ID Number</label>
+              <input type="text" class="form-control" id="edrpID" name="edrpID"
+                placeholder="Enter your college ID number" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}" readonly
+                placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label for="contactNo">Contact Number</label>
+              <input type="number" class="form-control" id="contactNo" name="contactNo"
+                placeholder="Enter your correct phone number." required>
+            </div>
+            <div class="form-group">
+              <label for="semester">Semester</label>
+              <select id="semester" name="semester" class="form-control" required>
+                <option selected>Choose...</option>
+                <option>Fifth</option>
+                <option>Sixth</option>
+                <option>Seventh</option>
+                <option>Eighth</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="branch">Branch</label>
+              <select id="branch" name="branch" class="form-control" required>
+                <option selected>Choose...</option>
+                <option>Mechanical</option>
+                <option>Civil</option>
+                <option>Computer Science</option>
+                <option>Information Technology</option>
+                <option>Electrical</option>
+                <option>Electrical&Electronics</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="projExp">Project Expert Name</label>
+              <select id="projExp" name="projExp" class="form-control" required>
+                <option selected>Choose...</option>
+                <option>Prof Hariram Chandrakar(Mech)-Robotics & Machine Learning</option>
+                <option>Dr. P.B Deshmukh(Mech)-Inernal Combustion Engine</option>
+                <option>Prof Sankalp Verma(Mech)-Designing</option>
+                <option>Prof Abhishek Singh(Mech)-Thermodynamics</option>
+                <option>Prof Sharad Chandrakar(Mech)-CAD/CAM/CAE</option>
+                <option>Prof Aman Rathore(Civil)-Mechanical Properties of Soil</option>
+                <option>Prof Vivek Swarnakar(Civil)-Study on Reinforced Compression Members</option>
+                <option>Prof Aakash Dubey(Civil)-Advanced Earthquake Resistant Techniques</option>
+                <option>Prof Akash Rajput(Civil)-Advance Technology in Surveying</option>
+                <option>Prof Rahul Tiwari(Civil)-Improvement of bearing capacity of soil</option>
+                <option>Prof Renu Lata(CSE)-Database and Information Systems</option>')
+                <option>Prof Rajesh Tiwari(CSE)-Machine Learning Using Python</option>
+                <option>Prof Ajay Pandey(CSE)-Python for Data Science</option>
+                <option>Prof Aditi Singh(CSE)-Web Development</option>
+                <option>Prof Victor Rossh(CSE)-File System Simulation</option>
+                <option>Prof Andrew Wilson(IT)-Android task monitoring</option>
+                <option>Prof Gurmeet Singh(IT)-Data Structures</option>
+                <option>Prof Pragya Tripathi(IT)-Digital Logic and Design</option>
+                <option>Prof Sunita Verma(IT)-Operating Systems</option>
+                <option>Prof Kapil Verma(IT)-Cyber Security</option>
+                <option>Prof Santosh Rai(EE)-Android Based Electrical Appliance Control</option>
+                <option>Prof Jitendra Kumar Tiwari(EE)-Power generation and supply</option>
+                <option>Prof Neena Lal(EE)-Communications and Media</option>
+                <option>Prof Rakesh Gupta(EE)-Science and technology research</option>
+                <option>Prof Vivek Kumar(EE)-Computer hardware and software design</option>
+                <option>Prof Himanshu Pandey(EEE)-Analog And Digital Electronics</option>
+                <option>Prof Shikha Tiwari(EEE)-Signals and System</option>
+                <option>Prof Prateek Chatterjee(EEE)-Network Theory</option>
+                <option>Prof Sarat Kumar Sahu(EEE)-Power Electronics</option>
+                <option>Prof Arun Kumar(EEE)- Analog circuits and power electronics</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="projTop">Project Topic</label>
+              <input type="text" class="form-control" id="projTop" name="projTop"
+                placeholder="Enter your project topic" required>
+            </div>
+
+            <div class="form-group">
+              <label for="projCost">Amount</label>
+              <input type="number" class="form-control" id="projCost" name="projCost" placeholder="Amount" value="500"
+                readonly>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-outline-success">Pay and Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {% if payment %}
+  <div class="text-center mx-auto">
+    <form action="{% url 'success' %}" method="POST">
+      <script src="https://checkout.razorpay.com/v1/checkout.js" data-key="rzp_test_mXXfi6MoDP64rS"
+        data-amount="{{payment.amount}}" data-currency="INR" data-order_id="{{payment.id}}"
+        data-buttontext="Pay with Razorpay" data-name="Project SSTC" data-description="Test transaction"
+        data-image="https://example.com/your_logo.jpg" data-prefill.name="Gaurav Kumar"
+        data-prefill.email="gaurav.kumar@example.com" data-prefill.contact="9999999999"
+        data-theme.color="#F37254"></script>
+      <input type="hidden" custom="Hidden Element" name="hidden">
+    </form>
+    {% endif %}
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

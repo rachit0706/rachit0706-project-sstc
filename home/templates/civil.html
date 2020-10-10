@@ -1,0 +1,119 @@
+<html>
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<title>Civil Engineering</title>
+<style>
+h1 { 
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  text-align: center;
+}
+h3 { 
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  text-align: center;
+}
+*{
+    box-sizing:border-box;
+}
+body{
+    background: url('/static/civil/background.jpg');
+  height: 100%;
+  width: auto;
+  background-size: cover;
+}
+
+.container{
+    max-width: 1200px;
+    margin:auto
+   
+}
+.gallery{
+    margin: 5px;
+    border: 10px solid black;
+    float:left;
+    width: 390px;
+}
+.gallery img{
+    width:370px;
+    height:300px;
+}
+.desc{
+    padding:1px;
+    text-align:center;
+    background: white;
+
+}
+</style>
+</head>
+
+<body>
+    <div class="w3-animate-top">
+<h1>CIVIL ENGINEERING</h1>
+</div>
+<div class="container w3-animate-zoom">
+    <div class="gallery">
+        <img src ="{% static 'civil/mann 1.jpg' %}">
+            <div class="desc">
+                <p>Prof Aman Rathore
+                <br>Expertise in Mechanical Properties of Soil
+                <br>Contact info= 9826155212
+                <br>Email= amanrathore12@gmail.com</p>
+            </div>
+    </div>
+    <div class="gallery">
+        <img src ="{% static 'civil/mann 2.jpg' %}">
+            <div class="desc">
+                <p>Prof Vivek Swarnakar
+                <br>Expertise in Study on Reinforced Compression Members
+                <br>Contact info= 9926789707  
+                <br>Email= vivek14@gmail.com</p>
+            </div>
+    </div>
+    <div class="gallery">
+        <img src ="{% static 'civil/MAN 12.jpg' %}">
+            <div class="desc">
+                <p>Prof Aakash Dubey
+                <br>Expertise in Advanced Earthquake Resistant Techniques
+                <br>Contact info=9925339222
+                <br>Email= ad12@gmail.com</p>
+            </div>
+    </div>
+    <div style="margin-left: 200px;">
+    <div class="gallery">
+        <img src ="{% static 'civil/mannn 4.jpg' %}">
+            <div class="desc">
+                <p>Prof Akash Rajput
+                <br>Expertise in Advance Technology in Surveying
+                <br>8543211234
+                <br>Contact info=8263459447
+                <br>Email= akashrajput19@gmail.com</p>
+            </div>
+    </div>
+    <div class="gallery">
+        <img src ="{% static 'civil/mann 5.jpg' %}">
+            <div class="desc">
+                <p>Prof Rahul Tiwari
+                <br>Expertise in Improvement of bearing capacity of soil 
+                <br>9988664499
+                <br>Email= rahul7@gmail.com</p>    
+            </div>
+    </div>
+</div>
+    
+
+</div>
+
+</body>

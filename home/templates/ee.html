@@ -1,0 +1,127 @@
+<html>
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Electrical Engineering</title>
+    <style>
+        h1 {
+            display: block;
+            font-size: 2em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: bisque;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        h3 {
+            display: block;
+            font-size: 2em;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url('/static/ee/background.webp');
+            height: 100%;
+            background-size: cover;
+        }
+        
+
+        .container {
+            max-width: 1200px;
+            margin: auto
+        }
+
+        .gallery {
+            margin: 5px;
+            border: 10px solid black;
+            float: left;
+            width: 390px;
+        }
+
+        .gallery img {
+            width: 370px;
+            height: 300px;
+        }
+
+        .desc {
+            padding: 1px;
+            text-align: center;
+            background: white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w3-container w3-center w3-animate-top">
+        <h1>ELECTRICAL ENGINEERING</h1>
+    </div>
+    <div class="container w3-animate-zoom">
+        <div class="gallery">
+            <img src="{% static 'ee/man 1.jpg' %}">
+            <div class="desc">
+                <p><b>Prof Santosh Rai</b>
+                    <br>Expertise in Android Based Electrical Appliance Control
+                    <br>Contact info= 9826154231
+                    <br>Email= santosh12@gmail.com</p>
+            </div>
+        </div>
+        <div class="gallery">
+            <img src="{% static 'ee/man 3.jpg' %}">
+            <div class="desc">
+                <p><b>Prof Rakesh Gupta</b>
+                    <br>Expertise in Science and technology research
+                    <br>8543211234
+                    <br>Contact info=8263459232
+                    <br>Email= rakesh1999@gmail.com</p>
+            </div>
+        </div>
+        <div class="gallery">
+            <img src="{% static 'ee/man 4.jpg' %}">
+            <div class="desc">
+                <p><b>Prof Vivek Kumar</b>
+                    <br>Expertise in Computer hardware and software design
+                    <br>9988664423
+                    <br>Email= VK78@gmail.com</p>
+            </div>
+        </div>
+
+        <div style="margin-left: 200px;">
+            <div class="gallery">
+                <img src="{% static 'ee/man 2.jpg' %}">
+                <div class="desc">
+                    <p><b>Prof Jagdish Kumar Tiwari</b>
+                        <br>Expertise in Power generation and supply
+                        <br>Contact info= 9926789070
+                        <br>Email= jkt14@gmail.com</p>
+                </div>
+            </div>
+            <div class="gallery">
+                <img src="{% static 'ee/woman.jpg' %}">
+                <div class="desc">
+                    <p><b>Prof Neena Lal</b>
+                        <br>Expertise in Communications and Media
+                        <br>Contact info=9925469232
+                        <br>Email= neenalal212@gmail.com</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>

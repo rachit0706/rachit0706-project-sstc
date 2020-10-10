@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    {% load static %}
+<title>Mechanical</title>
+<style>
+/* h1 { 
+    
+  position: relative;
+  animation: mymove 5s;
+
+}
+@keyframes mymove {
+  from {left: 0px;}
+  to {left: 500px;}
+} */
+h3 { 
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  text-align: center;
+}
+*{
+    box-sizing:border-box;
+}
+body{
+    background: url('/static/mech/background.jpg');
+  height: 100%;
+  background-size: cover;
+}
+
+.container{
+    max-width: 1200px;
+    margin:auto
+   
+}
+.gallery{
+    margin: 5px;
+    border: 10px solid black;
+    float:left;
+    width: 390px;
+}
+.gallery img{
+    width:370px;
+    height:300px;
+}
+.desc{
+    padding:1px;
+    text-align:center;
+    background: white;
+
+}
+</style>
+</head>
+
+<body>
+    <div class="w3-container w3-center w3-animate-top">
+<h1 style="font-family: Arial, Helvetica, sans-serif; color:black; font-weight: 1000;">MECHANICAL</h1>
+    </div>
+    <div class="container w3-animate-zoom">
+    <div class="gallery">
+        <img src ="{% static 'mech/man 1.jpg' %}">   
+            <div class="desc">
+                <p>Prof Hariram Chandrakar
+                <br>Expertise in Robotics & Machine Learning
+                <br>Contact info= 9826143276
+                <br>Email= hari@gmail.com</p>
+            </div>
+    </div>
+    <div class="gallery">
+        <img src ="{% static 'mech/man 2.jpg' %}">
+            <div class="desc">
+                <p>Dr P.B Deshmukh
+                <br>Expertise in Inernal Combustion Engine
+                <br>Contact info= 9926633456   
+                <br>Email= pbdeshmukh14@gmail.com</p>
+             </div>
+    </div>
+    <div class="gallery">
+        <img src ="{% static 'mech/Passport Pic.jpg' %}">
+            <div class="desc">
+                <p>Prof Sankalp Verma
+                <br>Expertise in Designing
+                <br>Contact info=8265469232
+                <br>Email= sankalpv12@gmail.com</p>
+            </div>
+    </div>
+    <div class="container" style="margin-left: 190px;">
+    <div class="gallery">
+        <img src ="{% static 'mech/man 444.jpg' %}">
+            <div class="desc">
+                <p>Prof Abhishek Singh
+                <br>Expertise in Thermodynamics
+                <br>8543211234
+                <br>Contact info=8265469232
+                <br>Email= abhi122@gmail.com</p>
+            </div>
+    </div>
+    <div class="gallery">
+        <img src ="{% static 'mech/man 5.jpg' %}">
+            <div class="desc">
+                <p>Prof Sharad Chandrakar
+                <br>Expertise in CAD/CAM/CAE
+                <br>9988664423
+                <br>Email= sharad78@gmail.com</p>    
+            </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+</body>

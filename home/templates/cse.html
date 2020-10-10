@@ -1,0 +1,126 @@
+<html>
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Computer Science</title>
+    <style>
+        h1 {
+            display: block;
+            font-size: 2em;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: blanchedalmond;
+            text-align: center;
+            animation: forwards;
+        }
+
+        h3 {
+            display: block;
+            font-size: 2em;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url('/static/cse/background.jpg');
+            height: 100%;
+            background-size: cover
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto
+        }
+
+        .gallery {
+            margin: 5px;
+            border: 10px solid black;
+            float: left;
+            width: 390px;
+        }
+
+        .gallery img {
+            width: 370px;
+            height: 300px;
+        }
+
+        .desc {
+            padding: 1px;
+            text-align: center;
+            background: white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w3-animate-top">
+        <h1>COMPUTER SCIENCE AND ENGINEERING</h1>
+    </div>
+
+    <div class="container w3-animate-zoom">
+        <div class="gallery">
+            <img src="{% static 'cse/woman 1.jpg' %}">
+            <div class="desc">
+                <p>Prof Renu Lata
+                    <br>Expertise in Database and Information Systems
+                    <br>Contact info= 9826155423
+                    <br>Email= renu1214@gmail.com</p>
+            </div>
+        </div>
+        <div class="gallery">
+            <img src="{% static 'cse/mannn 1.jpg' %}">
+            <div class="desc">
+                <p>Prof Rajesh Tiwari
+                    <br>Expertise in Machine Learning Using Python
+                    <br>Contact info= 9926789777
+                    <br>Email= rajesh214@gmail.com</p>
+            </div>
+        </div>
+        <div class="gallery">
+            <img src="{% static 'cse/mannn 2.jpg' %}">
+            <div class="desc">
+                <p>Prof Ajay Pandey
+                    <br>Expertise in Python for Data Science
+                    <br>Contact info=99254692223
+                    <br>Email= ajayp2@gmail.com</p>
+            </div>
+        </div>
+        <div style="margin-left: 200px;">
+            <div class="gallery">
+                <img src="{% static 'cse/woman 2.jpg' %}">
+                <div class="desc">
+                    <p>Prof Aditi Singh
+                        <br>Expertise in Web Development
+                        <br>8543211234
+                        <br>Contact info=8263459123
+                        <br>Email= aditi19@gmail.com</p>
+                </div>
+            </div>
+            <div class="gallery">
+                <img src="{% static 'cse/mannn 3.jpg' %}">
+                <div class="desc">
+                    <p>Prof Victor Rossh
+                        <br>Expertise in File System Simulation
+                        <br>9988664342
+                        <br>Email= vrossh12@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>

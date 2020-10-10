@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>College Home</title>
+    <style>
+        h1 {
+            display: block;
+            font-size: 2em;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+            text-align: center;
+        }
+        .cardView{
+            box-shadow: 5px 5px 5px red;
+        }
+    
+        .card-body {
+            background: wheat;
+        }
+        .card {
+            cursor: pointer;
+        }
+        .page-content{
+            background: url('/static/collegehome/background.jpg');
+  height: 100%;
+  background-size: cover;
+        }
+        </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">College Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                
+            </ul>
+            <a href="{% url 'login' %}">
+            <button type="button" class="btn btn-outline-success mr-2" >
+                Login
+            </button></a>
+            <!-- <button type="submit" class="btn btn-outline-info" data-toggle="modal" data-target="#signupModal">
+                SignUp
+            </button> -->
+            <a href="{% url 'register' %}"><button type="submit" class="btn btn-outline-info">
+                SignUp
+            </button> </a>
+        </div>
+    </nav>
+    {% for message in messages  %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message </strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>  
+    {% endfor %}
+    <div class="page-content">
+    <div class="w3-container w3-center w3-animate-left">
+        <h1 style="font-style: inherit; font-family: Georgia, 'Times New Roman', Times, serif; color: antiquewhite;">STUDENTS ARE HIGHLY ADVISED TO KNOW ABOUT THE BRANCH EXPERTS BEFORE ADDING PROJECT</h1> 
+    </div>
+   
+    <div class="w3-animate-zoom">
+        
+
+        <div class="row p-2 text-center">
+            <div class="col-md-4">
+                <div class="card cardView">
+               
+                    <div class="card-body">
+                        <img src="{% static 'collegehome/mech.jpg' %}" alt="" class="img-fluid rounded-circle wb-50 mb-3">
+                        <h4>MECHANICAL</h4>
+                        <p>Mechanical engineering is an engineering branch that combines engineering physics and mathematics principles with materials science to design, analyze, manufacture, and maintain mechanical systems.[1] It is one of the oldest and broadest of the engineering branches.</p>
+                        <a href="{% url 'mech' %}" class="btn btn-primary btn-sm" target="_blank">Our Experts</a>    
+                    </div>
+                    
+                </div>
+            </div>
+            <!--                column 2-->
+            <div class="col-md-4">
+                <div class="card cardView">
+                   
+                    <div class="card-body">
+                        <img src="{% static 'collegehome/civil.jpg' %}" alt="" class="img-fluid rounded-circle wb-50 mb-3">
+                        <h4>CIVIL</h4>
+                        <P>Civil engineering is a professional engineering discipline that deals with the design, construction, and maintenance of the physical and naturally built environment, including public works such as roads, bridges, canals, dams, airports, sewerage systems, pipelines.</P>
+                        <a href="{% url 'civil' %}" class="btn btn-primary btn-sm" target="_blank">Our Experts</a>
+                    </div>
+                  
+                </div>
+            </div>
+            
+               
+            <div class="col-md-4">
+                <div class="card cardView">
+                 
+                    <div class="card-body">
+                        <img src="{% static 'collegehome/cse.jpg' %}" alt="" class="img-fluid rounded-circle wb-50 mb-3">
+                        <h4>CSE</h4>
+                        <p>One of the most sought after courses amongst engineering students, Computer Science Engineering (CSE) is an academic programme which integrates the field of Computer Engineering and Computer Science. The programme, which emphasises the basics of computer programming.</p>
+                        <a href="{% url 'cse' %}" class="btn btn-primary btn-sm" target="_blank">Our Experts</a>                            
+                    </div>
+                 
+                </div>
+            </div>
+            
+        </div>
+
+         <div class="row p-2 text-center">
+            <!--                column 1-->
+            <div class="col-md-4">
+                <div class="card cardView">
+               
+                    <div class="card-body">
+                        <h4>IT</h4>
+                        <img src="{% static 'collegehome/it.jpg' %}" alt="" class="img-fluid rounded-circle wb-50 mb-3">
+                        <P>In today’s world Information Technology (IT) has become the most fundamental need for proper functioning of human society. Be it running the banks or getting food from an eatery home-delivered, Information Technology has become the part and parcel of our lives.</P>
+                        <a href="{% url 'it' %}" class="btn btn-primary btn-sm" target="_blank">Our Experts</a>                          
+                    </div>
+                    
+                </div>
+            </div>
+            <!--                column 2-->
+            <div class="col-md-4">
+                <div class="card cardView">
+                   
+                    <div class="card-body">
+                        <img src="{% static 'collegehome/ee.jpg' %}" alt="" class="img-fluid rounded-circle wb-50 mb-3">
+                        <h4>EE</h4>
+                        <p>Electrical engineering is an engineering discipline concerned with the study, design and application of equipment, devices and systems which use electricity, electronics, and electromagnetism. It emerged as an identifiable occupation in the latter half of the 19th century.</p>
+                        <a href="{% url 'ee' %}" class="btn btn-primary btn-sm" target="_blank">Our Experts</a>
+                        
+                    </div>
+                  
+                </div>
+            </div>
+            
+                <!--             column 3-->
+            <div class="col-md-4">
+                <div class="card cardView">
+                 
+                    <div class="card-body">
+                        <img src="{% static 'collegehome/eee.jpg' %}" alt="" class="img-fluid rounded-circle wb-50 mb-3">
+                        <h4>EEE</h4>
+                        <P>“Electrical & Electronics Engineering” is a growing and one of the most sought disciplines in the field of engineering study. It comprises with the electrical engineering and electronics engineering. It is originated by the electrical engineering.</P>
+                        <a href="{% url 'eee' %}" class="btn btn-primary btn-sm" target="_blank">Our Experts</a>
+                    </div>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    
+    
+
+    <!-- SIGNUP MODAL -->
+    <!-- <div class="modal fade modal-dialog modal-dialog-scrollable" id="signupModal" tabindex="-1" aria-labelledby="signupModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModal">Sign Up!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="{% url 'register' %}">
+                        {% csrf_token %}
+                        {{ form.as_p }} -->
+                        <!-- <div class="form-group">
+                          <label for="fname">First Name</label>
+                          <input type="text" class="form-control" name="fname" id="fname" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="lname">Last Name</label>
+                          <input type="text" class="form-control" name="lname" id="lname" placeholder="Enter your last name" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="email">Email address</label>
+                          <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email : name@example.com" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="username">User Name</label>
+                          <input type="text" class="form-control" name="username" id="username" placeholder="Create a unique username (alphanumeric)" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="pass1">Enter a password</label>
+                          <input type="password" class="form-control" name="pass1" id="pass1" placeholder="Enter a password" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="pass2">Confirm password</label>
+                          <input type="password" class="form-control" name="pass2" id="pass2" placeholder="Confirm password" required>
+                        </div>
+                     
+                        
+                        <button type="submit" class="btn btn-primary">SignUp</button> -->
+                      <!-- </form>
+                </div>
+                <div class="modal-footer">
+               
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- LOGIN MODAL -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModal">Log In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{% url 'login' %}" method="POST">
+                        {% csrf_token %}
+                       
+                        <div class="form-group">
+                          <label for="loginusername">User Name</label>
+                          <input type="text" class="form-control" id="loginusername" name="loginusername" placeholder="Enter your username" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="loginpassword">Enter a password</label>
+                          <input type="password" class="form-control" id="loginpassword" name="loginpassword" placeholder="Enter your password" required>
+                        </div>
+                    
+                        
+                        <button type="submit" class="btn btn-primary">LogIn</button>
+                      </form>
+                </div>
+                <div class="modal-footer">
+               
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
